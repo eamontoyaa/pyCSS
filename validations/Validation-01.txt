@@ -1,0 +1,78 @@
+---SUMMARY OF PROJECT---
+ 
+Project name: Validation-01
+Author: Exneyder A. Montoya Araque
+Date: 06/05/16
+Safety factors: 
+    -Fellenius method: 1.94362485125
+    -Bishop method: 2.09590467259
+ 
+--Slope geometry--
+Height: 40 ft
+Dip: 31.3008270055 degrees
+Crown distance: 60 ft
+Toe distance: 20 ft
+Toe depth: 20 ft
+Surface coordinates: 
+[[   0.   60.]
+ [  60.   60.]
+ [ 140.   20.]
+ [ 160.   20.]]
+ 
+--Watertable geometry--
+Depth at crown: 60 ft
+Is the slope partially submerged? No
+Watertable coordinates: 
+[[   0.    0.]
+ [ 160.    0.]]
+ 
+--Slip circle--
+Radius: 80 ft
+Center coordinates: [ 120.   90.]
+ 
+--Materials properties--
+Water unit weight: 62.4 pcf
+Soil unit weight: 120 pcf
+Friction angle 20 degrees
+Cohesion: 600 psf
+ 
+--Slices data--
+Number of slices: 10
+Has the surface slip constant width slices? No
+ 
+Slices structures data: 
+[['Index' 'Abscissa' 'Ordinate' 'Area' 'Width' 'Height'
+  'Secant Angle Grad at Bottom' 'Angle Grad at Top' 'Water Height'
+  'Water Height Above Slope' 'Horizontal Moment Arm' 'Vertical Moment Arm']
+ ['0.0' '51.5' '50.3' '109.9' '11.3' '9.7' '59.9' '-0.0' '0.0' '0.0'
+  '-68.5' '30.0']
+ ['1.0' '58.6' '38.8' '60.9' '2.9' '21.2' '50.2' '-0.0' '0.0' '0.0' '-61.4'
+  '30.0']
+ ['2.0' '64.2' '33.0' '209.8' '8.4' '24.9' '44.4' '26.6' '0.0' '0.0'
+  '-55.8' '32.1']
+ ['3.0' '74.1' '24.9' '317.2' '11.3' '28.1' '35.2' '26.6' '0.0' '0.0'
+  '-45.9' '37.0']
+ ['4.0' '85.4' '18.2' '329.2' '11.3' '29.2' '25.8' '26.6' '0.0' '0.0'
+  '-34.6' '42.7']
+ ['5.0' '96.6' '13.7' '315.7' '11.3' '28.0' '17.0' '26.6' '0.0' '0.0'
+  '-23.4' '48.3']
+ ['6.0' '107.9' '11.1' '281.3' '11.3' '24.9' '8.7' '26.6' '0.0' '0.0'
+  '-12.1' '54.0']
+ ['7.0' '119.2' '10.2' '227.9' '11.3' '20.2' '0.6' '26.6' '0.0' '0.0'
+  '-0.8' '59.6']
+ ['8.0' '130.5' '10.9' '156.3' '11.3' '13.8' '-7.6' '26.6' '0.0' '0.0'
+  '10.5' '65.3']
+ ['9.0' '138.1' '12.1' '34.1' '3.8' '8.9' '-13.1' '26.6' '0.0' '0.0' '18.1'
+  '69.0']
+ ['10.0' '143.7' '13.7' '46.9' '7.4' '6.3' '-17.3' '-0.0' '0.0' '0.0'
+  '23.7' '70.0']
+ ['11.0' '153.1' '17.4' '29.1' '11.3' '2.6' '-24.5' '-0.0' '0.0' '0.0'
+  '33.1' '70.0']]
+ 
+Note: This program calculated the safety factor to circular slip,
+under limit equilibrium considerations, using Fellenius and Bishop 
+methods. The imagen attached shows the calculation performed.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of 
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
