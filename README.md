@@ -1,6 +1,4 @@
 # Circular Slope Stability PyProgram (pyCSS)
-Is an open-source program wrote in python 3.4 for 2D slope stability analisys by circular slip under limit equilibrium considerations with Fellenius and Bishop's Methods.
+It is an open-source program written in Python 3.4 for 2D slope stability analysis (when arises a circular slip rupture) under the limit equilibrium frame with the Fellenius and Bishop's methods. The file 'pyCSS.py' is the module of the user interface and 'finalModule.py' is the module to run as script file. Please refer to the user manual (pyCSSmanualSpanish.pdf) to learn more. The manual is in Spanish but in the future we will translate it to English.
 
-'pyCSS.py' file is the module of the user interface and 'finalModule.py' is the module to run as script file.
-
-Please refer to the user manual (pyCSSmanualSpanish.pdf) to learn more.
+Es un programa abierto escrito en Python 3.4 para el análisis de estabilidad de taludes (cuando ocurre una ruptura de deslizamiento circular) bajo el marco del equilibrio límite con los métodos de Fellenius y Bishop. El archivo 'pyCSS.py' es el módulo para la interfase gráfica y 'finalModule.py' es el módulo para correr el archivo de lotes. Por favor, refiérase al manual del usuario (pyCSSmanualSpanish.pdf) para aprender más. El manual está en Español, pero en el futuro lo traduciremos al Inglés.
