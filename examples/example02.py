@@ -18,7 +18,7 @@ from onlyonecircle import onlyonecircle
 
 #-----------------------------------------------------------------------------#
 ### Poject data ###
-projectName = 'gh-example-02'
+projectName = 'Example-02'
 projectAuthor = 'Exneyder A. Montoya Araque'
 projectDate = time.strftime("%d/%m/%y")
 

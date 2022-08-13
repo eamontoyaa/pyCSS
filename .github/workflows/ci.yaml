@@ -24,7 +24,7 @@ jobs:
           python-version: ${{ matrix.python-version }}
 
       - name: Install dependencies
-        run: pip3 install -U -r requirements.txt
+        run: pip3 install -r requirements.txt
       - name: Run examples in ${{ matrix.python-version }}
         run: |
           python3 examples/example01.py
