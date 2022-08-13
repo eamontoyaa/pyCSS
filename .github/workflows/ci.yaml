@@ -26,9 +26,6 @@ jobs:
       - name: Install dependencies
         run: pip3 install -r requirements.txt
 
-      - name: Set DISPLAY env variable
-        run: echo "DISPLAY=:0.0" >> $GITHUB_ENV
-
       - name: Run examples in Python-${{ matrix.python-version }}
         working-directory: ./examples
         run: |
