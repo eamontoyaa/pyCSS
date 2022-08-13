@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: ["3.5", "3.6", "3.7", "3.8", "3.9"]
+        python-version: ["3.5", "3.6"]
       fail-fast: false
 
     steps:
@@ -26,7 +26,10 @@ jobs:
       - name: Install dependencies
         run: pip3 install -r requirements.txt
 
-      - name: Run examples in ${{ matrix.python-version }}
+      - name: Set DISPLAY env variable
+        run: echo "DISPLAY=:0.0" >> $GITHUB_ENV
+
+      - name: Run examples in Python-${{ matrix.python-version }}
         working-directory: ./examples
         run: |
           python3 example01.py
@@ -34,6 +37,6 @@ jobs:
 
       - uses: actions/upload-artifact@v3
         with:
-          name: artifact-${{ matrix.python-version }}
+          name: py-${{ matrix.python-version }}
           path: examples/
 
