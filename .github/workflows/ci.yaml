@@ -1,0 +1,37 @@
+name: CI/CD
+
+on:
+  workflow_dispatch:
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.5", "3.6", "3.7", "3.8", "3.9"]
+      fail-fast: false
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Install dependencies
+        run: pip3 install -r requirements.txt
+      - name: Run examples in ${{ matrix.python-version }}
+        run: |
+          python3 examples/example01.py
+          python3 examples/example02.py
+
+      - uses: actions/upload-artifact@v3
+        with:
+          name: artifact-${{ matrix.python-version }}
+          path: examples/
+
