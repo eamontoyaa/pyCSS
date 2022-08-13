@@ -25,10 +25,12 @@ jobs:
 
       - name: Install dependencies
         run: pip3 install -r requirements.txt
+
       - name: Run examples in ${{ matrix.python-version }}
+        working-directory: ./examples
         run: |
-          python3 examples/example01.py
-          python3 examples/example02.py
+          python3 example01.py
+          python3 example02.py
 
       - uses: actions/upload-artifact@v3
         with:
