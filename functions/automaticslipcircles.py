@@ -401,7 +401,7 @@ def automaticslipcircles(projectName, projectAuthor, projectDate, slopeHeight,\
     plt.xlabel('$x$ distance')
     #plt.ylabel('$y$ distance')
     plt.savefig(projectName+outputFormatImg, dpi=300)
-    plt.hold(False)
+    # plt.hold(False)
     #------------------------------------------------------------------------------
     ## Exporting summary data
     outFile = open(projectName+'.txt', 'w')

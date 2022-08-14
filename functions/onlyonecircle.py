@@ -309,7 +309,7 @@ def onlyonecircle(projectName, projectAuthor, projectDate, slopeHeight, \
         plt.xlabel('$x$ distance')
         plt.ylabel('$y$ distance')
         plt.title(projectName)
-        plt.hold(False)
+        # plt.hold(False)
         plt.savefig(projectName+outputFormatImg, dpi=300)
         
         #----------------------------------------------------------------------
