@@ -53,9 +53,11 @@ def extractplinefrom2pts(pointOneVec, pointTwoVec, surfaceDataCell):
             pointOneVec[0] < surfaceDataCell[i]['endPtVec'][0]:
             firstPtBelongArray[i] = 1
             break
-    
+
+    # print("firstPtBelongArray -->", firstPtBelongArray)
     pointOnePlineIndex = np.nonzero(firstPtBelongArray)[0]
-    
+    # print("pointOnePlineIndex -->", pointOnePlineIndex)
+
     ## For the second point.
     secondPtBelongArray = np.zeros(numLines)
     for i in list(range(numLines)):
@@ -63,8 +65,10 @@ def extractplinefrom2pts(pointOneVec, pointTwoVec, surfaceDataCell):
             pointTwoVec[0] < surfaceDataCell[i]['endPtVec'][0]:
             secondPtBelongArray[i] = 1
             break
-    
+
+    # print("secondPtBelongArray -->", secondPtBelongArray)
     pointTwoPlineIndex = np.nonzero(secondPtBelongArray)[0]
+    # print("pointTwoPlineIndex -->", pointTwoPlineIndex)
 
     ## Now it will built the array, but with extremes values.
     numSubPoints = (sum(pointTwoPlineIndex)-sum(pointOnePlineIndex)+1)*2
@@ -79,8 +83,8 @@ def extractplinefrom2pts(pointOneVec, pointTwoVec, surfaceDataCell):
     ## Now one will replace the extreme values.
     # Left end.
     xLeftEnd = pointOneVec[0]
-    yLeftEnd = surfaceDataCell[pointOnePlineIndex]['intercept']\
-        +surfaceDataCell[pointOnePlineIndex]['slope']*pointOneVec[0]
+    yLeftEnd = surfaceDataCell[pointOnePlineIndex[0]]['intercept']\
+        +surfaceDataCell[pointOnePlineIndex[0]]['slope']*pointOneVec[0]
     # Right end.
     xRightEnd = pointTwoVec[0]
     yRightEnd = surfaceDataCell[sum(pointTwoPlineIndex)]['intercept']\
@@ -97,6 +101,43 @@ def extractplinefrom2pts(pointOneVec, pointTwoVec, surfaceDataCell):
     plineChordsArray = np.flipud(plineChordsArray)
 
     return plineChordsArray
+
+# pointOneVec = np.array([4.3470, 24])
+# pointTwoVec = np.array([12.0085, 23.1966])
+# surfaceDataCell = [
+#     {
+#         'iniPtVec': np.array([0, 24]),
+#         'endPtVec': np.array([10, 24]),
+#         'unitVec':  np.array([1, 0]),
+#         'lambda':10,
+#         'slope':0,
+#         'azimuthRad':0,
+#         'intercept':24
+#     },
+#    {
+#         'iniPtVec': np.array([10, 24]),
+#         'endPtVec': np.array([40, 12]),
+#         'unitVec': np.array([0.9285, -0.3714]),
+#         'lambda': 32.3110, 'slope': -0.4228, 
+#         'azimuthRad':5.9027, 'intercept':34.1470
+#     },
+#    {
+#         'iniPtVec': np.array([40, 12]),
+#         'endPtVec':np.array([50, 12]),
+#         'unitVec': np.array([1, 0]),
+#         'lambda':10,
+#         'slope':0,
+#         'azimuthRad':0,
+#         'intercept':12
+#     }
+# ]
+
+# plineChordsArray = extractplinefrom2pts(
+#     pointOneVec,
+#     pointTwoVec,
+#     surfaceDataCell
+# )
+# print(plineChordsArray)
 '''
 BSD 2 license.
 
