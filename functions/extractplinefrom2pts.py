@@ -54,9 +54,7 @@ def extractplinefrom2pts(pointOneVec, pointTwoVec, surfaceDataCell):
             firstPtBelongArray[i] = 1
             break
 
-    # print("firstPtBelongArray -->", firstPtBelongArray)
     pointOnePlineIndex = np.nonzero(firstPtBelongArray)[0]
-    # print("pointOnePlineIndex -->", pointOnePlineIndex)
 
     ## For the second point.
     secondPtBelongArray = np.zeros(numLines)
@@ -66,9 +64,7 @@ def extractplinefrom2pts(pointOneVec, pointTwoVec, surfaceDataCell):
             secondPtBelongArray[i] = 1
             break
 
-    # print("secondPtBelongArray -->", secondPtBelongArray)
     pointTwoPlineIndex = np.nonzero(secondPtBelongArray)[0]
-    # print("pointTwoPlineIndex -->", pointTwoPlineIndex)
 
     ## Now it will built the array, but with extremes values.
     numSubPoints = (sum(pointTwoPlineIndex)-sum(pointOnePlineIndex)+1)*2
