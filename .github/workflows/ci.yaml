@@ -8,7 +8,7 @@ defaults:
     shell: bash
 
 jobs:
-  test:
+  run-examples:
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -24,7 +24,9 @@ jobs:
           python-version: ${{ matrix.python-version }}
 
       - name: Install dependencies
-        run: pip3 install -r requirements.txt
+        run: |
+          python3 pip install --upgrade pip
+          pip install -r requirements.txt
 
       - name: Run examples in Python-${{ matrix.python-version }}
         working-directory: ./examples
@@ -36,4 +38,3 @@ jobs:
         with:
           name: py-${{ matrix.python-version }}
           path: examples/
-

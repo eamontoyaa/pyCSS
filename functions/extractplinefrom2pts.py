@@ -90,7 +90,7 @@ def extractplinefrom2pts(pointOneVec, pointTwoVec, surfaceDataCell):
     plineChordsArray[-1,:] = np.array([xRightEnd, yRightEnd])
     
     ## Extracting unique values.
-    plineChordsArray = np.vstack({tuple(row) for row in plineChordsArray})
+    plineChordsArray = np.vstack(list({tuple(row) for row in plineChordsArray}))
     ## Sorting the array (key=item[0]) upwardly.
     plineChordsArray = plineChordsArray[plineChordsArray[:,0].argsort()]
     ## Arranging inverse.
