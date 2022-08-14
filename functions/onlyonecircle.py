@@ -1,7 +1,13 @@
 ## import modules and functions
+import os
+
 import numpy as np
 import matplotlib
-matplotlib.use('Agg')
+
+if not os.environ.get('DISPLAY'):
+    print('No display found. Using non-interactive Agg backend')
+    matplotlib.use('Agg')
+
 import matplotlib.pyplot as plt
 
 from defineslipcircle import defineslipcircle
