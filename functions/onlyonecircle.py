@@ -268,7 +268,7 @@ def onlyonecircle(projectName, projectAuthor, projectDate, slopeHeight, \
         #--------------------------------------------------------------------------
         ## Plotting the problem
         plt.figure(str(np.random.rand()))
-        plt.hold(True)
+        # plt.hold(True)
         plt.grid(True)
         # Plot the circular arc center.
         plt.plot(slipArcSTR['center'][0], slipArcSTR['center'][1], 'kx')
