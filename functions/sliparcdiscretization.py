@@ -71,7 +71,7 @@ def sliparcdiscretization(pointAtToeVec, pointAtCrownVec, nDivs, slipArcSTR,\
     
     ## Plotting the arc
     if want2plot:
-        plt.hold(True)
+        # plt.hold(True)
         plt.axis('equal')
         plt.plot(arcPointsCoordsArray[:,0], arcPointsCoordsArray[:,1], 'g-')
         plt.grid(True)

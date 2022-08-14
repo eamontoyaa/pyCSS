@@ -87,7 +87,7 @@ def materialboundary(slopeHeight, slopeDip, crownDist,\
     
     # Plotting
     if want2plot:
-        plt.hold(True)
+        # plt.hold(True)
         plt.axis('equal')
         plt.plot(boundPointsCordsArray[:,0], boundPointsCordsArray[:,1], '-k')
         plt.plot(boundPointsCordsArray[:,0], boundPointsCordsArray[:,1], 'or')

@@ -308,9 +308,9 @@ def automaticslipcircles(projectName, projectAuthor, projectDate, slopeHeight,\
     ## Plotting the problem
     ### First figure (Fellenius method)
     plt.figure(str(np.random.rand()))
-    plt.hold(True)
+    # plt.hold(True)
     plt.subplot(1,2,1)
-    plt.hold(True)
+    # plt.hold(True)
     plt.grid(True)
     plt.title('Fellenius Method')
     # Plot the circular arc center.
@@ -357,7 +357,7 @@ def automaticslipcircles(projectName, projectAuthor, projectDate, slopeHeight,\
     
     ### Second figure (Bishop method)
     plt.subplot(1,2,2)
-    plt.hold(True)
+    # plt.hold(True)
     plt.grid(True)
     plt.title('Bishop Simp. Method')
     # Plot the circular arc center.

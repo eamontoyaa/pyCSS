@@ -180,7 +180,7 @@ def defineswatertable(wtDepthAtCrown, surfaceDataCell, \
                
     ## Ploting
     if want2plot:
-        plt.hold(True)
+        # plt.hold(True)
         plt.axis('equal')
         plt.plot(wtCoordsArray[:,0], wtCoordsArray[:,1], 'b-')
         plt.grid(True) 
