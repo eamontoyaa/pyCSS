@@ -102,42 +102,6 @@ def extractplinefrom2pts(pointOneVec, pointTwoVec, surfaceDataCell):
 
     return plineChordsArray
 
-# pointOneVec = np.array([4.3470, 24])
-# pointTwoVec = np.array([12.0085, 23.1966])
-# surfaceDataCell = [
-#     {
-#         'iniPtVec': np.array([0, 24]),
-#         'endPtVec': np.array([10, 24]),
-#         'unitVec':  np.array([1, 0]),
-#         'lambda':10,
-#         'slope':0,
-#         'azimuthRad':0,
-#         'intercept':24
-#     },
-#    {
-#         'iniPtVec': np.array([10, 24]),
-#         'endPtVec': np.array([40, 12]),
-#         'unitVec': np.array([0.9285, -0.3714]),
-#         'lambda': 32.3110, 'slope': -0.4228, 
-#         'azimuthRad':5.9027, 'intercept':34.1470
-#     },
-#    {
-#         'iniPtVec': np.array([40, 12]),
-#         'endPtVec':np.array([50, 12]),
-#         'unitVec': np.array([1, 0]),
-#         'lambda':10,
-#         'slope':0,
-#         'azimuthRad':0,
-#         'intercept':12
-#     }
-# ]
-
-# plineChordsArray = extractplinefrom2pts(
-#     pointOneVec,
-#     pointTwoVec,
-#     surfaceDataCell
-# )
-# print(plineChordsArray)
 '''
 BSD 2 license.
 
