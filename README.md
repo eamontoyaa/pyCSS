@@ -1,6 +1,6 @@
 # Circular Slope Stability PyProgram (pyCSS)
 
-It is an open-source program written in Python for 2D slope stability analysis of circular surfaces by the limit equilibrium method (Fellenius and Bishop's method.
+It is an open-source program written in Python for 2D slope stability analysis of circular surfaces by the limit equilibrium method (Fellenius and Bishop methods).
 
 ## Downloading the program
 
@@ -44,7 +44,7 @@ Citation
 
 To cite **pyCSS** in publications, use:
 
-    Suarez-Burgoa, Ludger O., and Exneyder A. Montoya-Araque. 2016. “Programa en código abierto para el análisis bidimensional de estabilidad de taludes por el método de equilibrio límite.” Revista de La Facultad de Ciencias 5 (2): 88–104. https://doi.org/10.15446/rev.fac.cienc.v5n2.59914.
+> Suarez-Burgoa, Ludger O., and Exneyder A. Montoya-Araque. 2016. “Programa en código abierto para el análisis bidimensional de estabilidad de taludes por el método de equilibrio límite.” Revista de La Facultad de Ciencias 5 (2): 88–104. <https://doi.org/10.15446/rev.fac.cienc.v5n2.59914>.
 
 A BibTeX entry for LaTeX users is:
 
