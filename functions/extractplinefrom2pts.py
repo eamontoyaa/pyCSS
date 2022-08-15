@@ -53,9 +53,9 @@ def extractplinefrom2pts(pointOneVec, pointTwoVec, surfaceDataCell):
             pointOneVec[0] < surfaceDataCell[i]['endPtVec'][0]:
             firstPtBelongArray[i] = 1
             break
-    
+
     pointOnePlineIndex = np.nonzero(firstPtBelongArray)[0]
-    
+
     ## For the second point.
     secondPtBelongArray = np.zeros(numLines)
     for i in list(range(numLines)):
@@ -63,7 +63,7 @@ def extractplinefrom2pts(pointOneVec, pointTwoVec, surfaceDataCell):
             pointTwoVec[0] < surfaceDataCell[i]['endPtVec'][0]:
             secondPtBelongArray[i] = 1
             break
-    
+
     pointTwoPlineIndex = np.nonzero(secondPtBelongArray)[0]
 
     ## Now it will built the array, but with extremes values.
@@ -79,8 +79,8 @@ def extractplinefrom2pts(pointOneVec, pointTwoVec, surfaceDataCell):
     ## Now one will replace the extreme values.
     # Left end.
     xLeftEnd = pointOneVec[0]
-    yLeftEnd = surfaceDataCell[pointOnePlineIndex]['intercept']\
-        +surfaceDataCell[pointOnePlineIndex]['slope']*pointOneVec[0]
+    yLeftEnd = surfaceDataCell[pointOnePlineIndex[0]]['intercept']\
+        +surfaceDataCell[pointOnePlineIndex[0]]['slope']*pointOneVec[0]
     # Right end.
     xRightEnd = pointTwoVec[0]
     yRightEnd = surfaceDataCell[sum(pointTwoPlineIndex)]['intercept']\
@@ -90,13 +90,14 @@ def extractplinefrom2pts(pointOneVec, pointTwoVec, surfaceDataCell):
     plineChordsArray[-1,:] = np.array([xRightEnd, yRightEnd])
     
     ## Extracting unique values.
-    plineChordsArray = np.vstack({tuple(row) for row in plineChordsArray})
+    plineChordsArray = np.vstack(list({tuple(row) for row in plineChordsArray}))
     ## Sorting the array (key=item[0]) upwardly.
     plineChordsArray = plineChordsArray[plineChordsArray[:,0].argsort()]
     ## Arranging inverse.
     plineChordsArray = np.flipud(plineChordsArray)
 
     return plineChordsArray
+
 '''
 BSD 2 license.
 

@@ -54,7 +54,7 @@ slicesSTR = \
 slicePlineCordsArray = plotslice(slicesSTR)
 '''
 def plotslice(slicesSTR):   
-    plt.hold(True)
+    # plt.hold(True)
     #Plot the slice contourn and middle point
     plt.plot(slicesSTR['plineCords'][:,0], slicesSTR['plineCords']\
         [:,1], 'k-', lw=0.5)

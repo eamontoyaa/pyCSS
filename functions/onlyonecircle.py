@@ -1,5 +1,13 @@
 ## import modules and functions
+import os
+
 import numpy as np
+import matplotlib
+
+if not os.environ.get('DISPLAY'):
+    print('No display found. Using non-interactive Agg backend')
+    matplotlib.use('Agg')
+
 import matplotlib.pyplot as plt
 
 from defineslipcircle import defineslipcircle
@@ -266,7 +274,7 @@ def onlyonecircle(projectName, projectAuthor, projectDate, slopeHeight, \
         #--------------------------------------------------------------------------
         ## Plotting the problem
         plt.figure(str(np.random.rand()))
-        plt.hold(True)
+        # plt.hold(True)
         plt.grid(True)
         # Plot the circular arc center.
         plt.plot(slipArcSTR['center'][0], slipArcSTR['center'][1], 'kx')
@@ -307,7 +315,7 @@ def onlyonecircle(projectName, projectAuthor, projectDate, slopeHeight, \
         plt.xlabel('$x$ distance')
         plt.ylabel('$y$ distance')
         plt.title(projectName)
-        plt.hold(False)
+        # plt.hold(False)
         plt.savefig(projectName+outputFormatImg, dpi=300)
         
         #----------------------------------------------------------------------

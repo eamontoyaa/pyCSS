@@ -97,7 +97,7 @@ def terrainsurface(fromToeOriginRowVec, slopeHeight, slopeDip, crownDist,
         
     # Plotting
     if want2plot:
-        plt.hold(True)
+        # plt.hold(True)
         plt.axis('equal')        
         plt.plot(surfaceChordsArray[:,0], surfaceChordsArray[:,1], 'r--', \
             linewidth=1.5)
