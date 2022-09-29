@@ -1,9 +1,9 @@
 # Import modules
 import numpy as np
 
-from circleby2ptsradius import circleby2ptsradius
-from unitvector import unitvector
-from azimuthangle import azimuthangle
+from .circleby2ptsradius import circleby2ptsradius
+from .unitvector import unitvector
+from .azimuthangle import azimuthangle
 
 '''
 # Description.

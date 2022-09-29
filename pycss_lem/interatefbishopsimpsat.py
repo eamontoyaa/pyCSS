@@ -1,11 +1,11 @@
 # import modules
 import numpy as np
-from reportslicestructurevalues import reportslicestructurevalues
+from .reportslicestructurevalues import reportslicestructurevalues
 
 '''
 # Description.
-Obtains the safety factor under the Fellenius method for any freatic level
-below the slope terrain surface.
+Obtains the safety factor under the Bishop simplified method for any freatic 
+level in coincidence or below the slope terrain surface.
 
 # External sub-function(s):
 reportslicestructurevalues.
@@ -32,16 +32,21 @@ slice structure is as follows:
       on the slope due to the water above it;
     vrtMomentArm: value of the vertical component of the moment arm acting 
       on the slope due to the water above it;
-
+      
 Unit weight of the water (waterUnitWeight).
 
 Geomaterial unit weight in dry state (materialUnitWeight).
 
 Angle of friction of the geomaterial at the slice base (frictionAngleGrad).
- 
+
 Cohesion of the geomaterial at the slice base (cohesion).
 
 Value of slip circle radius (slipRadius)
+
+Value of any factor of safety to be the seed to initiaite the iteration
+(seedFs). Default value is 1.5.
+
+Number of iterations (iterations). Default value is 5.
 
 # Output(s).
 The safety factor value (sf).
@@ -66,15 +71,16 @@ slicesSTRCell = divideslipintoslices(slipArcSTR, surfaceDataCell, \
     watertableDataCell, numSlices, pointAtToeVec, pointAtCrownVec, \
     wantConstSliceWidthTrue)
 # This function
-print(interateffelleniussat(slicesSTRCell, waterUnitWeight, \
+print(interatefbishopsimpsat(slicesSTRCell, waterUnitWeight, \
     materialUnitWeight, frictionAngleGrad, cohesion, slipRadius))
 
----
-sf = interateffelleniussat(slicesSTRCell, waterUnitWeight, \
+################
+sf = interatefbishopsimpsat(slicesSTRCell, waterUnitWeight, \
     materialUnitWeight, frictionAngleGrad, cohesion, slipRadius)
 '''
-def interateffelleniussat(slicesSTRCell, waterUnitWeight, \
-    materialUnitWeight, frictionAngleGrad, cohesion, slipRadius):
+def interatefbishopsimpsat(slicesSTRCell, waterUnitWeight, 
+        materialUnitWeight, frictionAngleGrad, cohesion, slipRadius,\
+        seedSafetyFactor = 1.5, iterations = 5):
 
     ## Transform information of slices structures into an array and display
     # input variables
@@ -110,30 +116,30 @@ def interateffelleniussat(slicesSTRCell, waterUnitWeight, \
         np.cos(np.radians(inclinationAngleGradAtTopArray))
     BetaAngTopSinArray = \
         np.sin(np.radians(inclinationAngleGradAtTopArray))
-    angDifCosArray = np.cos(np.radians(inclinationAngleGradAtBottomArray-\
-        inclinationAngleGradAtTopArray))
-    
-    lengthBaseArray = widthArray/alphaAngBottomCosArray
     
     # slice weights
     materialWeightArray = materialUnitWeight*areaArray
     externalWtForceArray = wtExternalPressureArray*widthArray/\
         BetaAngTopCosArray
-    wtForceArray = porePressureArray*lengthBaseArray
+    wtForceArray = porePressureArray*widthArray
 
     momentWtForce = externalWtForceArray*(BetaAngTopCosArray*hrzMomentArm+\
         BetaAngTopSinArray*vrtMomentArm)
 
-    # final math          
-    num = cohesion*lengthBaseArray+(materialWeightArray*\
-        alphaAngBottomCosArray+externalWtForceArray*angDifCosArray-\
-        wtForceArray*alphaAngBottomCosArray**2)*fricAngTangent
-    
-    den = materialWeightArray*alphaAngBottomSinArray
-    
-    sf = sum(num)/(sum(den)-sum(momentWtForce)/slipRadius)
+    for i in range(iterations):
+     
+        mAlpha = alphaAngBottomCosArray+(fricAngTangent*\
+            alphaAngBottomSinArray/seedSafetyFactor) 
+          
+        num = (cohesion*widthArray+(materialWeightArray+externalWtForceArray-\
+            wtForceArray)*fricAngTangent)/mAlpha
+        
+        den = materialWeightArray*alphaAngBottomSinArray
+        
+        sf = sum(num)/(sum(den)-sum(momentWtForce)/slipRadius)
+        seedSafetyFactor = sf
 
-    return sf
+    return sf 
 '''
 BSD 2 license.
 

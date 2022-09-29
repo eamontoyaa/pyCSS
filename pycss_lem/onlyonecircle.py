@@ -10,18 +10,18 @@ if not os.environ.get('DISPLAY'):
 
 import matplotlib.pyplot as plt
 
-from defineslipcircle import defineslipcircle
-from defineswatertable import defineswatertable
-from divideslipintoslices import divideslipintoslices
-from interatefbishopsimpsat import interatefbishopsimpsat
-from interateffelleniussat import interateffelleniussat
-from materialboundary import materialboundary
-from obtainmaxdepthdist import obtainmaxdepthdist
-from plotslice import plotslice
-from reportslicestructurevalues import reportslicestructurevalues
-from sliparcdiscretization import sliparcdiscretization
-from terrainsurface import terrainsurface
-from vertprojection2pline import vertprojection2pline
+from .defineslipcircle import defineslipcircle
+from .defineswatertable import defineswatertable
+from .divideslipintoslices import divideslipintoslices
+from .interatefbishopsimpsat import interatefbishopsimpsat
+from .interateffelleniussat import interateffelleniussat
+from .materialboundary import materialboundary
+from .obtainmaxdepthdist import obtainmaxdepthdist
+from .plotslice import plotslice
+from .reportslicestructurevalues import reportslicestructurevalues
+from .sliparcdiscretization import sliparcdiscretization
+from .terrainsurface import terrainsurface
+from .vertprojection2pline import vertprojection2pline
 
 '''
 ## Description:
@@ -368,6 +368,10 @@ def onlyonecircle(projectName, projectAuthor, projectDate, slopeHeight, \
             'of \nMERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.')
         outFile.close()
     return msg
+
+
+get_fos = onlyonecircle
+
 '''
 BSD 2 license.
 

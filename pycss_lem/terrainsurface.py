@@ -1,7 +1,7 @@
 #Import modules
 import numpy as np
 import matplotlib.pyplot as plt
-from create2dsegmentstructure import create2dsegmentstructure
+from .create2dsegmentstructure import create2dsegmentstructure
 
 '''
 # Description.

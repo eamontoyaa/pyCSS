@@ -1,11 +1,11 @@
 # import modules
 import numpy as np
-from sliparcdiscretization import sliparcdiscretization
-from uniquewithtolerance import uniquewithtolerance
-from vertprojection2pline import vertprojection2pline
-from tangentlineatcirclept import tangentlineatcirclept
-from extractplinefrom2pts import extractplinefrom2pts
-from polyarea import polyarea
+from .sliparcdiscretization import sliparcdiscretization
+from .uniquewithtolerance import uniquewithtolerance
+from .vertprojection2pline import vertprojection2pline
+from .tangentlineatcirclept import tangentlineatcirclept
+from .extractplinefrom2pts import extractplinefrom2pts
+from .polyarea import polyarea
 
 '''
 # Description:

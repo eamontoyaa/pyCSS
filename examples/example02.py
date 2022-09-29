@@ -5,16 +5,11 @@ analysis for the example number 02. #
 '''
 
 #-----------------------------------------------------------------------------#
-### Add functions directory ###
-import sys
-sys.path += ['../functions']
-
-#-----------------------------------------------------------------------------#
 ## Modules/Functions import
 import numpy as np
 import time
 
-from onlyonecircle import onlyonecircle
+from pycss_lem import get_fos
 
 #-----------------------------------------------------------------------------#
 ### Poject data ###
@@ -71,13 +66,33 @@ outputFormatImg = '.svg'
 
 #-----------------------------------------------------------------------------#
 # Operations for only one slip surface #
-msg = onlyonecircle(projectName, projectAuthor, projectDate, slopeHeight, \
-    slopeDip, crownDist, toeDist, wantAutomaticToeDepth, toeDepth, \
-    hztDistPointAtCrownFromCrown, hztDistPointAtToeFromCrown, \
-    slipRadius, wantWatertable, wtDepthAtCrown, toeUnderWatertable, \
-    waterUnitWeight, materialUnitWeight, frictionAngleGrad, cohesion, \
-    wantConstSliceWidthTrue, numSlices, nDivs, methodString, \
-    outputFormatImg)
+msg = get_fos(
+    projectName,
+    projectAuthor,
+    projectDate,
+    slopeHeight,
+    slopeDip,
+    crownDist,
+    toeDist,
+    wantAutomaticToeDepth,
+    toeDepth,
+    hztDistPointAtCrownFromCrown,
+    hztDistPointAtToeFromCrown,
+    slipRadius,
+    wantWatertable,
+    wtDepthAtCrown,
+    toeUnderWatertable,
+    waterUnitWeight,
+    materialUnitWeight,
+    frictionAngleGrad,
+    cohesion,
+    wantConstSliceWidthTrue,
+    numSlices,
+    nDivs,
+    methodString,
+    outputFormatImg
+)
+
 '''
 BSD 2 license.
 

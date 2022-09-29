@@ -1,7 +1,7 @@
 #Import modules
 import numpy as np
 import matplotlib.pyplot as plt
-from obtainmaxdepthdist import obtainmaxdepthdist
+from .obtainmaxdepthdist import obtainmaxdepthdist
 
 '''
 # Description.

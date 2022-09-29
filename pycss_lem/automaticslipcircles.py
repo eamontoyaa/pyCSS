@@ -3,18 +3,18 @@ import matplotlib.pyplot as plt
 import matplotlib.tri as tri
 from scipy.optimize import brentq
 
-from defineslipcircle import defineslipcircle
-from defineswatertable import defineswatertable
-from divideslipintoslices import divideslipintoslices
-from interatefbishopsimpsat import interatefbishopsimpsat
-from interateffelleniussat import interateffelleniussat
-from materialboundary import materialboundary
-from obtainmaxdepthdist import obtainmaxdepthdist
-from plotslice import plotslice
-from reportslicestructurevalues import reportslicestructurevalues
-from sliparcdiscretization import sliparcdiscretization
-from terrainsurface import terrainsurface
-from vertprojection2pline import vertprojection2pline
+from .defineslipcircle import defineslipcircle
+from .defineswatertable import defineswatertable
+from .divideslipintoslices import divideslipintoslices
+from .interatefbishopsimpsat import interatefbishopsimpsat
+from .interateffelleniussat import interateffelleniussat
+from .materialboundary import materialboundary
+from .obtainmaxdepthdist import obtainmaxdepthdist
+from .plotslice import plotslice
+from .reportslicestructurevalues import reportslicestructurevalues
+from .sliparcdiscretization import sliparcdiscretization
+from .terrainsurface import terrainsurface
+from .vertprojection2pline import vertprojection2pline
 
 '''
 ## Description:
@@ -461,6 +461,10 @@ def automaticslipcircles(projectName, projectAuthor, projectDate, slopeHeight,\
         'MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.')
     outFile.close()
     return
+
+
+get_min_fos = automaticslipcircles
+
 ''''
 BSD 2 license.
 
