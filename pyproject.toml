@@ -13,9 +13,6 @@ authors = [
     { name = "Suarez-Burgoa, Ludger O", email = "losuarezb@unal.edu.co" },
 ]
 
-[tool.hatch.module]
-name = "pycss_lem"
-
 classifiers = [
     "Intended Audience :: Information Technology",
     "Intended Audience :: System Administrators",
@@ -40,6 +37,9 @@ dependencies = [
     "scipy>=0.17.1",
 ]
 dynamic = ["version"]
+
+[tool.hatch.module]
+name = "pycss_lem"
 
 [tool.hatch.build]
 include = [
