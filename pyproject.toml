@@ -3,7 +3,7 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "pycss_lem"
+name = "pycss-lem"
 description = "2D slope stability analysis of circular surfaces by the limit equilibrium method (Fellenius and Bishop methods)."
 readme = "README.md"
 requires-python = ">=3.6"
@@ -12,6 +12,10 @@ authors = [
     { name = "Exneyder A. Montoya-Araque", email = "eamontoyaa@gmail.com" },
     { name = "Suarez-Burgoa, Ludger O", email = "losuarezb@unal.edu.co" },
 ]
+
+[tool.hatch.module]
+name = "pycss_lem"
+
 classifiers = [
     "Intended Audience :: Information Technology",
     "Intended Audience :: System Administrators",
@@ -36,6 +40,11 @@ dependencies = [
     "scipy>=0.17.1",
 ]
 dynamic = ["version"]
+
+[tool.hatch.build]
+include = [
+  "pycss_lem/*.py",
+]
 
 [project.urls]
 Homepage = "https://github.com/eamontoyaa/pyCSS"
