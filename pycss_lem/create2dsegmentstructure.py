@@ -1,7 +1,7 @@
 # import modules
 import numpy as np
-from azimuthangle import azimuthangle
-from unitvector import unitvector
+from .azimuthangle import azimuthangle
+from .unitvector import unitvector
 
 '''
 # Description.

@@ -5,18 +5,10 @@ analysis by the limit equilibrium model by Fellenius and Bishop symplified
 methods.
 '''
 
-#------------------------------------------------------------------------------
-## Add functions path
-import sys
-sys.path += ['./functions']
-
-#------------------------------------------------------------------------------
-## Modules/Functions import
 import numpy as np
 import time
 
-from automaticslipcircles import automaticslipcircles
-from onlyonecircle import onlyonecircle
+from pycss_lem import get_fos, get_min_fos
 
 #------------------------------------------------------------------------------
 ## Poject data
@@ -75,25 +67,65 @@ outputFormatImg = '.svg'
 
 #------------------------------------------------------------------------------
 # Operations for only one slip surface
-if wantEvaluateOnlyOneSurface == True:
-    msg = onlyonecircle(projectName, projectAuthor, projectDate, slopeHeight, \
-        slopeDip, crownDist, toeDist, wantAutomaticToeDepth, toeDepth, \
-        hztDistPointAtCrownFromCrown, hztDistPointAtToeFromCrown, \
-        slipRadius, wantWatertable, wtDepthAtCrown, toeUnderWatertable, \
-        waterUnitWeight, materialUnitWeight, frictionAngleGrad, cohesion, \
-        wantConstSliceWidthTrue, numSlices, nDivs, methodString, \
-        outputFormatImg)
+if wantEvaluateOnlyOneSurface:
+    msg = get_fos(
+        projectName,
+        projectAuthor,
+        projectDate,
+        slopeHeight,
+        slopeDip,
+        crownDist,
+        toeDist,
+        wantAutomaticToeDepth,
+        toeDepth,
+        hztDistPointAtCrownFromCrown,
+        hztDistPointAtToeFromCrown,
+        slipRadius,
+        wantWatertable,
+        wtDepthAtCrown,
+        toeUnderWatertable,
+        waterUnitWeight,
+        materialUnitWeight,
+        frictionAngleGrad,
+        cohesion,
+        wantConstSliceWidthTrue,
+        numSlices,
+        nDivs,
+        methodString,
+        outputFormatImg
+    )
 
 #------------------------------------------------------------------------------
 # Operations for multiple slip surface   
 else:
-    automaticslipcircles(projectName, projectAuthor, projectDate, slopeHeight,\
-        slopeDip, crownDist, toeDist, wantAutomaticToeDepth, toeDepth, \
-        numCircles, radiusIncrement, numberIncrements, maxFsValueCont, \
-        wantWatertable, wtDepthAtCrown, toeUnderWatertable, waterUnitWeight, \
-        materialUnitWeight, frictionAngleGrad, cohesion, \
-        wantConstSliceWidthTrue, numSlices, nDivs, methodString, \
-        outputFormatImg)
+    get_min_fos(
+        projectName,
+        projectAuthor,
+        projectDate,
+        slopeHeight,
+        slopeDip,
+        crownDist,
+        toeDist,
+        wantAutomaticToeDepth,
+        toeDepth,
+        numCircles,
+        radiusIncrement,
+        numberIncrements,
+        maxFsValueCont,
+        wantWatertable,
+        wtDepthAtCrown,
+        toeUnderWatertable,
+        waterUnitWeight,
+        materialUnitWeight,
+        frictionAngleGrad,
+        cohesion,
+        wantConstSliceWidthTrue,
+        numSlices,
+        nDivs,
+        methodString,
+        outputFormatImg
+    )
+
 '''
 BSD 2 license.
 
