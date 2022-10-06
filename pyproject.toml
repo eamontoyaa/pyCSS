@@ -32,9 +32,9 @@ classifiers = [
     "Programming Language :: Python :: 3.10",
 ]
 dependencies = [
-    "numpy>=1.10.4",
+    "numpy>=1.14.5",
     "matplotlib>=1.5.3",
-    "scipy>=0.17.1",
+    "scipy>=1.5",
 ]
 dynamic = ["version"]
 
