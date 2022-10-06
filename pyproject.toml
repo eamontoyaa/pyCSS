@@ -5,7 +5,7 @@ build-backend = "hatchling.build"
 [project]
 name = "pycss-lem"
 description = "2D slope stability analysis of circular surfaces by the limit equilibrium method (Fellenius and Bishop methods)."
-readme = "README.md"
+readme = "README.rst"
 requires-python = ">=3.6"
 license = "MIT"
 authors = [
