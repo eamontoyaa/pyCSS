@@ -10,7 +10,7 @@ To install **pyCSS v0.1.0** from PyPI, run this command in your terminal:
 
 .. code-block:: console
 
-    $ pip install pycss-lem
+    pip install pycss-lem
 
 Also, you can clone the original repo directory (release v0.0.9) using git:
 
@@ -79,7 +79,7 @@ If the example runs successfully, the program will create two files. One is a gr
 Documentation
 -------------
 
-Please refer to the user manual `user manual <https://github.com/eamontoyaa/pyCSS/blob/master/other_files/pyCSSmanualSpanish.pdf>` to learn more. Currently, the manual is in Spanish, but in the future, we will translate it to English.
+Please refer to the user manual `user manual for release v0.0.9 <https://github.com/eamontoyaa/pyCSS/blob/master/other_files/pyCSSmanualSpanish.pdf>`_ to learn more. Currently, the manual is in Spanish, but in the future, we will translate it to English.
 
 Citation
 --------
