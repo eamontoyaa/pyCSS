@@ -128,6 +128,9 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
+# vscode
+.vscode
+
 # Specific files
 /notebooks/mesh.geo
 /notebooks/mesh.msh

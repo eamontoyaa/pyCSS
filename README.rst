@@ -3,6 +3,14 @@ Circular Slope Stability PyProgram (pyCSS)
 
 It is an open-source program written in Python for 2D slope stability analysis of circular surfaces by the limit equilibrium method (Fellenius and Bishop methods).
 
+.. image:: https://raw.githubusercontent.com/eamontoyaa/pyCSS/master/other_files/figures/output_example_Fs.svg
+  :width: 500
+  :alt: Assessment of a single potential circular failure surface
+
+.. image:: https://raw.githubusercontent.com/eamontoyaa/pyCSS/master/other_files/figures/output_example_Fs-min.svg
+  :width: 500
+  :alt: Assessment of a multiple potential circular failure surface for getting the minimum Fs
+
 Downloading the program
 -----------------------
 
@@ -38,6 +46,10 @@ Usage
 
 Release v0.1.0+
 ^^^^^^^^^^^^^^^
+
+Please, refer to `this notebook <https://github.com/AppliedMechanics-EAFIT/slope_stability/blob/main/notebooks/limit_equilibrium_method.ipynb>`_ prepared
+for the Slope Stability class at EAFIT University (Colombia).  There, you will find a series of commented code blocks to carry out a stability assessment
+using **pyCSS**.
 
 You can run the program by editing the `script_template.py` file located in the `./examples/` directory of the installation folder.
 Use the examples located in the same folder as an input guide.
@@ -96,14 +108,14 @@ A BibTeX entry for LaTeX users is:
 .. code:: bibtex
 
     @article{SuarezBurgoa_MontoyaAraque_2016_art,
-    doi = {10.15446/rev.fac.cienc.v5n2.59914},
-    journal = {Revista de la Facultad de Ciencias},
-    keywords = {C{\'{o}}digo fuente libre,an{\'{a}}lisis de estabilidad de taludes,m{\'{e}}todo de Bishop,m{\'{e}}todo de equilibrio l{\'{i}}mite},
-    month = {jul},
-    number = {2},
-    pages = {88--104},
-    title = {{Programa en c{\'{o}}digo abierto para el an{\'{a}}lisis bidimensional de estabilidad de taludes por el m{\'{e}}todo de equilibrio l{\'{i}}mite}},
-    volume = {5},
-    year = {2016}
+        doi = {10.15446/rev.fac.cienc.v5n2.59914},
+        journal = {Revista de la Facultad de Ciencias},
+        keywords = {C{\'{o}}digo fuente libre,an{\'{a}}lisis de estabilidad de taludes,m{\'{e}}todo de Bishop,m{\'{e}}todo de equilibrio l{\'{i}}mite},
+        month = {jul},
+        number = {2},
+        pages = {88--104},
+        title = {{Programa en c{\'{o}}digo abierto para el an{\'{a}}lisis bidimensional de estabilidad de taludes por el m{\'{e}}todo de equilibrio l{\'{i}}mite}},
+        volume = {5},
+        year = {2016}
     }
 
